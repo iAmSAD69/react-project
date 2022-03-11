@@ -1,6 +1,7 @@
 import Speaker from "./Speaker";
 import {useState} from "react";
 
+
 function SpeakersToolbar( {theme,setTheme} )
 {
     const [showSessions, setShowSessions] = useState(true);

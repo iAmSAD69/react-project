@@ -12,7 +12,7 @@ function Sessions({ sessions }) {
             <Session {...sessions[0]} />
         </div>
     );
-}
+} V
 
 function SpeakerImage({ id, first, last }) {
     return (
