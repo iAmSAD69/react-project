@@ -1,7 +1,10 @@
 import Speaker from "./Speaker";
+import {useState} from "react";
 
 function SpeakersToolbar()
 {
+    const [showSessions, setShowSessions] = useState(true);
+    const [theme, setTheme] = useState("light");
     return(
         <section className="toolbar dark-theme-header">
             <div className="container">
@@ -13,8 +16,11 @@ function SpeakersToolbar()
                             <label className="fav">
                                 <input
                                 type="checkbox"
-                                checked={true}
-                                />
+                                checked={showSessions}
+                                onChange={(event)=>
+                                {
+                                    setShowSessions(event.target.checked);
+                                }}/>
                                 <span className="switch"></span>
                             </label>
                         </li>
@@ -23,7 +29,12 @@ function SpeakersToolbar()
                             <label className="dropdown">
                                 <select
                                     className="form-control theme"
-                                    value="light">
+                                    value={theme}
+                                    onChange={(event)=>
+                                    {
+                                        setTheme(event.target.value);
+                                    }
+                                }>
                                     <option value="light">Light</option>
                                     <option value="dark">Dark</option>
                                 </select>
